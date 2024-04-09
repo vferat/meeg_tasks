@@ -141,6 +141,6 @@ dmypy.json
 .DS_store
 
 # Generated files
-/pydra/tasks/CHANGEME/_version.py
-/related-packages/fileformats/fileformats/medimage_CHANGEME/_version.py
-/related-packages/fileformats-extras/fileformats/extras/medimage_CHANGEME/_version.py
+/pydra/tasks/mne/_version.py
+/related-packages/fileformats/fileformats/medimage_mne/_version.py
+/related-packages/fileformats-extras/fileformats/extras/medimage_mne/_version.py

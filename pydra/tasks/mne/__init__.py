@@ -3,12 +3,12 @@ This is a basic doctest demonstrating that the package and pydra can both be suc
 imported.
 
 >>> import pydra.engine
->>> import pydra.tasks.CHANGEME
+>>> import pydra.tasks.mne
 """
 try:
     from ._version import __version__
 except ImportError:
     raise RuntimeError(
-        "Pydra package 'CHANGEME' has not been installed, please use "
+        "Pydra package 'mne' has not been installed, please use "
         "`pip install -e <path-to-repo>` to install development version"
     )

@@ -8,7 +8,7 @@ from pydra.engine.core import TaskBase
 
 
 PKG_DIR = Path(__file__).parent.parent
-TASKS_DIR = PKG_DIR / "pydra" / "tasks" / "ants"
+TASKS_DIR = PKG_DIR / "pydra" / "tasks" / "mne"
 VERSION_GRANULARITY = (
     2  # Number of version parts to include: 1 - major, 2 - minor, 3 - micro
 )
@@ -16,7 +16,7 @@ VERSION_GRANULARITY = (
 
 @click.command(
     help="""Increment the latest version or create a new sub-package for interfaces for
-a new release of AFNI depending on whether one already exists or not.
+a new release of mne depending on whether one already exists or not.
 
 NEW_VERSION the version of AFNI to create a new sub-package for
 """
@@ -39,7 +39,7 @@ def increment_tool_version(new_version: LooseVersion):
             ),
             key=lambda x: LooseVersion(".".join(x.split("_"))).version,
         )[-1]
-        prev_ver_mod = import_module(f"pydra.tasks.ants.{prev_version}")
+        prev_ver_mod = import_module(f"pydra.tasks.mne.{prev_version}")
 
         mod_attrs = [getattr(prev_ver_mod, a) for a in dir(prev_ver_mod)]
         task_classes = [
@@ -47,7 +47,7 @@ def increment_tool_version(new_version: LooseVersion):
         ]
 
         code_str = (
-            f"from pydra.tasks.ants import {prev_version}\n"
+            f"from pydra.tasks.mne import {prev_version}\n"
             "from . import _tool_version\n"
         )
 
